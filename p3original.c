@@ -1,5 +1,5 @@
  #include<stdio.h>
- int input()
+ int input_n()
 {
 	int n;
 printf("Enter n\n");
@@ -7,11 +7,11 @@ printf("Enter n\n");
 	return n;
 }
 
-int sum_range(int n)
+int sum_n(int n)
 {
 	int sum = 0;
 	for( int i=1; i<=n; i++) 
-		sum += i;
+		sum = sum+i;
 	return sum;
 }
 
@@ -24,8 +24,8 @@ void output(int n, int sum)
 
 int main()
 {
-	int n = input();
-	int sum = sum_range(n);
+	int n = input_n();
+	int sum = sum_n(n);
 	output(n,sum);
 	return 0;
 }
