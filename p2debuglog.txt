@@ -1,0 +1,108 @@
+gcc -g p2final.c
+ ./a.out
+Enter any three numbers to compare
+56
+Enter any three numbers to compare
+38
+Enter any three numbers to compare
+94
+The largest number  is 94
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x830: file p2final.c, line 29.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p2final.c:29
+29  num1=input();
+(gdb) s
+input () at p2final.c:4
+4   {
+(gdb) n
+6   printf("Enter any three numbers to compare\n");
+(gdb) n
+Enter any three numbers to compare
+7   scanf("%d",&a);
+(gdb) n
+56
+8   return a;
+(gdb) n
+9   }
+(gdb) n
+main () at p2final.c:30
+30  num2=input();
+(gdb) s
+input () at p2final.c:4
+4   {
+(gdb) n
+6   printf("Enter any three numbers to compare\n");
+(gdb) n
+Enter any three numbers to compare
+7   scanf("%d",&a);
+(gdb) n
+65
+8   return a;
+(gdb) n
+9   }
+(gdb) n
+main () at p2final.c:31
+31  num3=input();
+(gdb) s
+input () at p2final.c:4
+4   {
+(gdb) n
+6   printf("Enter any three numbers to compare\n");
+(gdb) n
+Enter any three numbers to compare
+7   scanf("%d",&a);
+(gdb) n
+97
+8   return a;
+(gdb) n
+9   }
+(gdb) p num1
+No symbol "num1" in current context.
+(gdb) p a
+$1 = 97
+(gdb) s
+main () at p2final.c:32
+32  cmpr=cmp(num1,num2,num3);
+(gdb) s
+cmp (a=56, b=65, c=97) at p2final.c:13
+13  if(a>=b&&a>=c)
+(gdb) n
+15  if(a<=b && b>=c)
+(gdb) n
+18  largest = c;
+(gdb) n
+19  return largest;
+(gdb) n
+20  }
+(gdb) n
+main () at p2final.c:33
+33  output(cmpr);
+(gdb) s
+output (num=97) at p2final.c:24
+24  printf("The largest number  is %d\n",num);
+(gdb) n
+The largest number  is 97
+25  }
+(gdb) n
+main () at p2final.c:34
+34  }(gdb) 
